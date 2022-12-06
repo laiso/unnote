@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
 const got = require('got');
 const fs = require('fs');
 fs.mkdirSync('data/note', {recursive: true})
@@ -45,9 +47,9 @@ async function getNote(key) {
 // https://qiita.com/asa-taka/items/888bc5a1d7f30ee7eda2
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
-require('yargs')
+yargs(hideBin(process.argv))
     .command('export [username] [page]', 'start the program', (yargs) => {
-      yargs
+      return yargs
           .positional('username', {
             describe: 'user name'
           })
@@ -62,4 +64,4 @@ require('yargs')
       }
       unnote(argv.username, argv.page);
     })
-    .argv
+    .parse()
