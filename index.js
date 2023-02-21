@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
-const got = require('got');
-const fs = require('fs');
+
+import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
+import got from 'got';
+import fs from 'fs';
+
 fs.mkdirSync('data/note', {recursive: true})
 
 async function unnote(username, page = 1, counter = 0) {
