@@ -1,6 +1,7 @@
 {
   "name": "unnote",
   "version": "1.0.3",
+  "type": "module",
   "main": "index.js",
   "bin": {
     "unnote": "index.js"
@@ -8,7 +9,7 @@
   "author": "laiso",
   "license": "MIT",
   "dependencies": {
-    "got": "^11.1.3",
+    "got": "^12.5.3",
     "yargs": "^17.6.2"
   }
 }
